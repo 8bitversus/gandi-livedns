@@ -6,9 +6,9 @@
 # Gandi livedns API KEY
 APIKEY=""
 # Static domain
-DOMAIN="8bitversus.com"
+DOMAIN="example.com"
 # Dynamic subdomain
-SUBDOMAIN=$(hostname)
+SUBDOMAIN=$(hostname -s)
 
 function validate_ip {
     local IP_ADDR="${1}"
@@ -25,10 +25,10 @@ function validate_ip {
 function usage {
   echo
   echo "Usage"
-  echo "  ${0} [--domain 8bitversus.com] [--hostname popey] [--help]"
+  echo "  ${0} [--apikey API_TOKEN] [--domain example.com] [--hostname $(hostname -s)] [--help]"
   echo
   echo "You can also pass optional parameters"
-  echo "  --apikey    : Gandi.net API token"
+  echo "  --apikey    : Gandi.net API token."
   echo "  --domain    : Domain hosted at Gandi.net."
   echo "  --subdomain : Subdomain you want to associate with your IP address."
   echo "  --help      : This help."
